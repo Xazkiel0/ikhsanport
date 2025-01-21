@@ -68,7 +68,6 @@ export const BentoGridItem = ({
             {title}
           </div>
         </div>
-        {id == 2 && <Globe />}
       </div>
       {/* {header} */}
     </div>)
