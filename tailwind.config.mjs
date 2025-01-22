@@ -72,6 +72,7 @@ export default {
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
         "meteor-effect": "meteor 5s linear infinite",
+        "scroll": "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         meteor: {
@@ -133,6 +134,14 @@ export default {
             transform: "translateY(-50%)",
           },
         },
+        scroll: {
+          from: {
+            transform: "translateX(calc(-100%))",
+          },
+          to: {
+            transform: "translateX(calc(100vw))",
+          },
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -143,6 +152,7 @@ export default {
   },
   plugins: [addVariablesForColors, require("tailwindcss-animate"), GridDots],
 };
+
 
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
