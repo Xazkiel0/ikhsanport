@@ -3,8 +3,6 @@ import React from 'react'
 import { Spotlight } from './ui/spotlight'
 import { GridBackground } from './ui/GridBackground'
 import { TextGenerateEffect } from './ui/text-generate-effect'
-import { Icon } from '@iconify/react'
-import { Github } from 'lucide-react'
 import SocialMedia from './custom/SocialMedia'
 
 const onConditions = {
@@ -19,9 +17,9 @@ const Hero = () => {
   return (
     <div className="">
       <div className="">
-        <Spotlight className={"-top-40 -left-10 md:-top-20 md:-left-32 h-screen"} fill={"white"} />
-        <Spotlight className={"top-10 left-full h-[80vh] w-[20vw] -rotate-90"} fill={"purple"} />
-        <Spotlight className={"-top-40 left-20 h-[180vh] w-[50vw]"} fill={"blue"} />
+        <Spotlight className={"-top-40 -left-10 md:-top-20 md:-left-32 h-screen"} fill={"purple"} />
+        <Spotlight className={"top-10 left-full h-80 md:h-[80vh] md:w-[20vw] -rotate-90"} fill={"blue"} />
+        <Spotlight className={"-top-40 left-20 h-[180vh] w-[50vw]"} fill={"purple"} />
       </div>
       <GridBackground />
       <div className="flex justify-center relative z-10 h-dvh">
@@ -34,7 +32,7 @@ const Hero = () => {
             words={"Fullstack Web Developer | Crafting Website Experiences with Precision"}
           />
           <p className="text-center md:tracking-wider mb-4 text-xs md:text-lg lg:text-sm dark:text-white mt-2 md:mt-6">
-            My name is <span className='text-primary text-sm md:text-lg font-semibold'>Ikhsan</span>, a Fullstack Web Developer based in Surabaya Indonesia. <span className='hidden md:block'>
+            My name is <span className='px-1 bg-primary-foreground text-primary text-sm md:text-lg font-semibold rounded-sm'>Ikhsan</span>, a Fullstack Web Developer based in Surabaya Indonesia. <span className='hidden md:block'>
               Currently {onConditions.degree} and still focusing on honing my skills in web development and software engineering.
             </span>
           </p>
