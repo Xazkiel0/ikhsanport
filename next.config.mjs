@@ -9,8 +9,15 @@ const nextConfig = {
             {
                 hostname: 'images.unsplash.com',
                 pathname: '/**'
-            }
-        ]
+            },
+            {
+                hostname: 'api.microlink.io',
+                pathname: '/**'
+            },
+        ],
+        domains: [
+            "api.microlink.io",
+        ],
     }
 };
 

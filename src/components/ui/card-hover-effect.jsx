@@ -2,6 +2,10 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { CardContent } from "./card";
+import Image from "next/image";
+import ProjectImage from "../custom/ProjectImage";
+import TextHighlight from "../custom/TextHighlight";
 
 export const HoverEffect = ({
   items,
@@ -11,7 +15,7 @@ export const HoverEffect = ({
 
   return (
     (<div
-      className={cn("grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10", className)}>
+      className={cn("grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 ", className)}>
       {items.map((item, idx) => (
         <Link
           href={item?.link}
@@ -35,9 +39,19 @@ export const HoverEffect = ({
                 }} />
             )}
           </AnimatePresence>
-          <Card>
+          <Card className="">
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardContent className="text-white p-0 pt-4">
+              <ProjectImage url={item.link} />
+              <CardDescription>{item.description}</CardDescription>
+              <div className="flex flex-wrap gap-2 items-start text-xs mt-3">
+                {item.stack.map((st, stIdx) => (
+                  <TextHighlight className="p-2 py-1 rounded-full" key={stIdx}>
+                    {st}
+                  </TextHighlight>
+                ))}
+              </div>
+            </CardContent>
           </Card>
         </Link>
       ))}
@@ -52,7 +66,7 @@ export const Card = ({
   return (
     (<div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-transparent border border-transparent dark:border-white/[0.2] group-hover:border-primary relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-transparent border border-transparent dark:border-slate-300 group-hover:border-primary relative z-20",
         className
       )}>
       <div className="relative z-50">

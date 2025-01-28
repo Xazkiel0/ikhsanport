@@ -74,7 +74,7 @@ const TimelineAccordion = ({
             {data[titleTime].map((item, idxItem) => (
                 <AccordionItem value={`item-${idxItem}`} key={idxItem}>
                     <AccordionTrigger className="gap-8">
-                        <span className='flex flex-col items-start gap-1 '>
+                        <div className='flex flex-col items-start gap-1 '>
                             <div className="">
                                 {item.triggerTitle}
                                 <TextHighlight>
@@ -84,7 +84,7 @@ const TimelineAccordion = ({
                             <div className="time text-xs italic text-muted-foreground text-center ">
                                 {item.timeExact}
                             </div>
-                        </span>
+                        </div>
                     </AccordionTrigger>
                     <AccordionContent>
                         <ul className='flex flex-col gap-2 *:flex *:gap-3 *:items-start'>

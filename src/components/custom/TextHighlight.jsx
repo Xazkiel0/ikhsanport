@@ -1,8 +1,9 @@
+import { cn } from '@/lib/utils'
 import React from 'react'
 
-const TextHighlight = ({ children }) => {
+const TextHighlight = ({ className, children }) => {
     return (
-        <span className="px-1 bg-primary-foreground text-primary rounded-sm">{children}</span>
+        <span className={cn("px-1 bg-primary-foreground text-primary rounded-sm", className)}>{children}</span>
     )
 }
 

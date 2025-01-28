@@ -17,13 +17,13 @@ export default function Home() {
         ]} />
         <Hero />
         <MovingElements />
-        {/* <div className="mt-40 flex flex-col">
+        <TimelineSection />
+        {/* <div className="mt-40 flex flex-col text-white">
           <span>Technology Used</span>
           <div className="flex">
-
+            s
           </div>
         </div> */}
-        <TimelineSection />
         <ProjectCards />
         {/* <Grid /> */}
       </div>

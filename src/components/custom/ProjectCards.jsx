@@ -1,50 +1,45 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { HoverEffect } from "../ui/card-hover-effect";
 import { cn } from '@/lib/utils';
 
-const items = [
+const projTabs = [
     {
-        id: 1,
-        nm: "Asd1"
+        tabName: "All"
     },
     {
-        id: 2,
-        nm: "Asd2"
+        tabName: "Web"
     },
     {
-        id: 3,
-        nm: "Asd3"
+        tabName: "Mobile"
     },
 ]
 
 const ProjectCards = () => {
-    const [active, setActive] = useState(1)
-    return (
-        (<div className="max-w-5xl mx-auto px-8">
-            <div className="flex gap-2 flex-row items-center justify-center bg-black [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar p-2">
-                {items.map(item => (
+    const [active, setActive] = useState(0)
 
+    return (
+        (<div className="max-w-5xl mx-auto">
+            <div className="flex gap-2 flex-row items-center justify-center w-fit rounded-full mx-auto border border-slate-300 [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar p-2">
+                {projTabs.map((tab, idx) => (
                     <button
                         className="relative px-4 py-2 rounded-full"
-                        key={item.id}
-                        onClick={() => setActive(item.id)}
-                        style={{
-                            transformStyle: "preserve-3d",
-                        }}
+                        key={idx}
+                        onClick={() => setActive(idx)}
+                        disabled={idx == 2}
                     >
-                        {active === item.id && (
+                        {active === idx && (
                             <motion.div
                                 layoutId="projectTab"
                                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                                 className={cn(
-                                    "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full "
+                                    "absolute inset-0 border border-primary rounded-full "
                                 )}
                             />
                         )}
-                        <span className="relative block text-black dark:text-white">
-                            {item.nm}
+                        <span className={`relative block text-${active === idx ? "primary" : "white"}`}>
+                            {tab.tabName}
                         </span>
                     </button>
                 ))}
@@ -56,40 +51,54 @@ const ProjectCards = () => {
 
 export const projects = [
     {
-        title: "Stripe",
+        title: "Snack Business Order System",
         description:
             "A technology company that builds economic infrastructure for the internet.",
-        link: "https://stripe.com",
+        link: "https://luring-form.vercel.app",
+        stack: [
+            "Next.js",
+            "TailwindCSS",
+            "ShadcnUI",
+            "Zod",
+            "ReactQuery",
+            "Prisma",
+            "PostgreSQL",
+        ],
     },
     {
-        title: "Netflix",
+        title: "Hulu Clone",
         description:
-            "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-        link: "https://netflix.com",
+            "A technology company that builds economic infrastructure for the internet.",
+        link: "https://hulufromtutor.vercel.app",
+        stack: [
+            "Next.js",
+            "TailwindCSS",
+        ],
     },
     {
-        title: "Google",
+        title: "Small Business Company Profile: IlraCakeArt",
         description:
-            "A multinational technology company that specializes in Internet-related services and products.",
-        link: "https://google.com",
+            "A technology company that builds economic infrastructure for the internet.",
+        link: "https://gamelab-ilra-cakeart.vercel.app",
+        stack: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "Alpine.js",
+            "Bootstrap5",
+            "AOS",
+        ],
     },
     {
-        title: "Meta",
+        title: "Dashboard Template: Dashb",
         description:
-            "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-        link: "https://meta.com",
-    },
-    {
-        title: "Amazon",
-        description:
-            "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-        link: "https://amazon.com",
-    },
-    {
-        title: "Microsoft",
-        description:
-            "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-        link: "https://microsoft.com",
+            "A technology company that builds economic infrastructure for the internet.",
+        link: "https://gamelab-dashboard-template.vercel.app",
+        stack: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+        ],
     },
 ];
 

@@ -1,6 +1,8 @@
 import { Icon } from '@iconify/react';
-import React from 'react'
+import React, { useState } from 'react'
 import { AnimatedTooltip } from '../ui/animated-tooltip';
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const socialMedia = [
     {
@@ -35,14 +37,36 @@ const socialMedia = [
 ];
 
 const SocialMedia = () => {
+    let [active, setActive] = useState(null)
     return (
         <>
             {
                 socialMedia.map(sm => (
                     <AnimatedTooltip item={sm} key={sm.id}>
-                        <div className="p-2 flex justify-center items-center hover:text-primary border hover:border-primary rounded-full cursor-pointer">
-                            {sm.icon}
-                        </div>
+                        <AnimatePresence>
+                            <div
+                                onMouseEnter={() => setActive(sm.id)}
+                                onMouseLeave={() => setActive(null)}
+                                className="group p-2 flex justify-center items-center hover:text-primary border hover:border-primary relative rounded-full cursor-pointer">
+                                {active === sm.id && (
+                                    <motion.span
+                                        key={sm.id}
+                                        layoutId="socmed"
+                                        initial={{ opacity: 0 }}
+                                        animate={{
+                                            opacity: 1,
+                                            transition: { duration: 0.35 },
+                                        }}
+                                        exit={{
+                                            opacity: 0,
+                                            transition: { duration: 0.35, delay: 1 },
+                                        }}
+                                        className="absolute  -inset-1 -z-30 bg-primary-foreground rounded-full "
+                                    />
+                                )}
+                                {sm.icon}
+                            </div>
+                        </AnimatePresence>
                     </AnimatedTooltip>
                 ))
             }
