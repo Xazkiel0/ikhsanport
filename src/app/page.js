@@ -1,4 +1,6 @@
 import CobaAnimasi from "@/components/custom/CobaAnimasi";
+import Footer from "@/components/custom/Footer";
+import { InputContact } from "@/components/custom/InputContact";
 import { MovingElements } from "@/components/custom/MovingElements";
 import ProjectCards from "@/components/custom/ProjectCards";
 import { TimelineSection } from "@/components/custom/TimelineSection";
@@ -26,6 +28,8 @@ export default function Home() {
         </div> */}
         <ProjectCards />
         {/* <Grid /> */}
+        <InputContact />
+        <Footer />
       </div>
     </main>
   );
