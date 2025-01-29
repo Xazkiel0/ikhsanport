@@ -20,14 +20,7 @@ export default function Home() {
         <Hero />
         <MovingElements />
         <TimelineSection />
-        {/* <div className="mt-40 flex flex-col text-white">
-          <span>Technology Used</span>
-          <div className="flex">
-            s
-          </div>
-        </div> */}
         <ProjectCards />
-        {/* <Grid /> */}
         <InputContact />
         <Footer />
       </div>
