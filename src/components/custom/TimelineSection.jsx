@@ -68,7 +68,7 @@ export function TimelineSection() {
     },
   ];
   return (
-    <div className="w-full z-50 relative">
+    <div className="w-full relative">
       <Timeline data={data} />
       <div className="z-20 bg-primary w-[400px] h-[480px] absolute -right-[400px] xl:-right-[60%] xl:-translate-x-1/2 top-1/2 rounded-full opacity-30 blur-[80px]"></div>
     </div>
