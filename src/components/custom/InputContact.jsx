@@ -2,7 +2,6 @@
 
 import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
 import { Vortex } from "../ui/vortex";
-import SocialMedia from "./SocialMedia";
 
 export function InputContact() {
   const placeholders = [
@@ -25,7 +24,7 @@ export function InputContact() {
         backgroundColor="#00000000"
         rangeY={200}
         particleCount={500}
-        baseHue={120}
+        baseHue={180}
         className="flex items-center flex-col justify-center px-2 md:px-10  py-4 w-full h-full"
       >
         <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl font-semibold dark:text-white text-black">
